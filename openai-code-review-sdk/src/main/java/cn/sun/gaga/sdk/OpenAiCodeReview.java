@@ -1,4 +1,4 @@
-package cn.sun.gaga;
+package cn.sun.gaga.sdk;
 
 public class OpenAiCodeReview {
 
