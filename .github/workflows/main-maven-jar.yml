@@ -3,10 +3,10 @@ name: Build and Run OpenAiCodeReview By Main Maven Jar
 on:
   push:
     branches:
-      - '*'
+      - master
   pull_request:
     branches:
-      - '*'
+      - master
 
 jobs:
   build:
@@ -28,9 +28,7 @@ jobs:
         run: mvn clean install
 
       - name: Copy openai-code-review-sdk JAR
-        run: mvn dependency:copy -Dartifact=cn.sun.gaga:openai-code-review:1.0 -DoutputDirectory=./libs
+        run: mvn dependency:copy -Dartifact=plus.gaga.middleware:openai-code-review-sdk:1.0 -DoutputDirectory=./libs
 
-      - name: Run code Review
+      - name: Run Code Review
         run: java -jar ./libs/openai-code-review-sdk-1.0.jar
-
-
