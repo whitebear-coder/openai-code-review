@@ -12,6 +12,7 @@ import javax.swing.*;
 @SpringBootTest
 public class ApiTest {
 
+    @Test
     public void Test(){
         System.out.println(Integer.parseInt("aaaa"));
     }
