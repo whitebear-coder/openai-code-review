@@ -111,7 +111,7 @@ public class OpenAiCodeReview {
 
     private static String writeLog(String token, String log) throws GitAPIException {
         Git git = Git.cloneRepository()
-                .setURI("")
+                .setURI("https://github.com/whitebear-coder/openai-code-review-log.git")
                 .setDirectory(new File("repo"))
                 .setCredentialsProvider(new UsernamePasswordCredentialsProvider(token, ""))
                 .call();
