@@ -1,8 +1,10 @@
 package cn.sun.gaga.sdk;
 import cn.sun.gaga.sdk.domain.model.ChatCompletionRequest;
 import cn.sun.gaga.sdk.domain.model.ChatCompletionSyncResponse;
+import cn.sun.gaga.sdk.domain.model.Message;
 import cn.sun.gaga.sdk.domain.model.Model;
 import cn.sun.gaga.sdk.types.utils.BearerTokenUtils;
+import cn.sun.gaga.sdk.types.utils.WXAccessTokenUtils;
 import com.alibaba.fastjson2.JSON;
 import org.eclipse.jgit.api.Git;
 import org.eclipse.jgit.api.errors.GitAPIException;
@@ -16,6 +18,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.Random;
+import java.util.Scanner;
 
 
 public class OpenAiCodeReview {
@@ -53,8 +56,49 @@ public class OpenAiCodeReview {
         String log = codeReview(diffCode.toString());
         System.out.println("codeReview: "+ log);
 
-        //写入评审日志
-        writeLog(token, log);
+        // 3.写入评审日志
+        String logUrl = writeLog(token, log);
+
+        //4.消息通知
+        pushMessage(logUrl);
+
+    }
+
+    private static void pushMessage(String logUrl){
+        String accessToken = WXAccessTokenUtils.getAccessToken();
+
+        Message message = new Message();
+        message.put("project", "big-market");
+        message.put("review", logUrl);
+
+        message.setUrl(logUrl);
+        //添加模板消息
+
+        String url = String.format("https://api.weixin.qq.com/cgi-bin/message/template/send?access_token=%s", accessToken);
+        sendPostRequest(url, JSON.toJSONString(message));
+    }
+
+    private static void sendPostRequest(String urlString, String jsonBody) {
+        try {
+            URL url = new URL(urlString);
+            HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+            conn.setRequestMethod("POST");
+            conn.setRequestProperty("Content-Type", "application/json; utf-8");
+            conn.setRequestProperty("Accept", "application/json");
+            conn.setDoOutput(true);
+
+            try (OutputStream os = conn.getOutputStream()) {
+                byte[] input = jsonBody.getBytes(StandardCharsets.UTF_8);
+                os.write(input, 0, input.length);
+            }
+
+            try (Scanner scanner = new Scanner(conn.getInputStream(), StandardCharsets.UTF_8.name())) {
+                String response = scanner.useDelimiter("\\A").next();
+                System.out.println(response);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     private static String codeReview(String diffCode) throws Exception{
