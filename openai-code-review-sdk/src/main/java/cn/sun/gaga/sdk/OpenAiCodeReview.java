@@ -127,6 +127,8 @@ public class OpenAiCodeReview {
 
         try (FileWriter writer = new FileWriter(newFile)){
             writer.write(log);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
         }
         git.add().addFilepattern(dateFolderName + "/" + fileName).call();
         git.commit().setMessage("Add new file via GitHub Actions").call();
