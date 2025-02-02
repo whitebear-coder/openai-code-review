@@ -41,7 +41,6 @@ public class OpenAiCodeReview {
                 getEnv("COMMIT_MESSAGE")
         );
 
-
         /**
          * 项目：{{repo_name.DATA}} 分支：{{branch_name.DATA}} 作者：{{commit_author.DATA}} 说明：{{commit_message.DATA}}
          */
