@@ -11,6 +11,8 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      ACTIONS_STEP_DEBUG: true  # 启用调试日志
 
     steps:
       - name: Checkout repository

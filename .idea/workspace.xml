@@ -5,14 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3bb11642-951c-4f1c-96bf-847153917ea5" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dbnavigator.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/openai-code-review-sdk/src/main/java/cn/sun/gaga/sdk/OpenAiCodeReview.java" beforeDir="false" afterPath="$PROJECT_DIR$/openai-code-review-sdk/src/main/java/cn/sun/gaga/sdk/OpenAiCodeReview.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/openai-code-review-sdk/src/main/java/cn/sun/gaga/sdk/domain/service/impl/OpenAiCodeReviewService.java" beforeDir="false" afterPath="$PROJECT_DIR$/openai-code-review-sdk/src/main/java/cn/sun/gaga/sdk/domain/service/impl/OpenAiCodeReviewService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/openai-code-review-sdk/target/classes/cn/sun/gaga/sdk/OpenAiCodeReview$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/openai-code-review-sdk/target/classes/cn/sun/gaga/sdk/OpenAiCodeReview.class" beforeDir="false" afterPath="$PROJECT_DIR$/openai-code-review-sdk/target/classes/cn/sun/gaga/sdk/OpenAiCodeReview.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/openai-code-review-sdk/target/classes/cn/sun/gaga/sdk/types/utils/WXAccessTokenUtils$Token.class" beforeDir="false" afterPath="$PROJECT_DIR$/openai-code-review-sdk/target/classes/cn/sun/gaga/sdk/types/utils/WXAccessTokenUtils$Token.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/openai-code-review-sdk/target/classes/cn/sun/gaga/sdk/types/utils/WXAccessTokenUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/openai-code-review-sdk/target/classes/cn/sun/gaga/sdk/types/utils/WXAccessTokenUtils.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
