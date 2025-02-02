@@ -1,31 +1,11 @@
 package cn.sun.gaga.sdk;
-import cn.sun.gaga.sdk.domain.model.ChatCompletionRequest;
-import cn.sun.gaga.sdk.domain.model.ChatCompletionSyncResponse;
-import cn.sun.gaga.sdk.domain.model.Message;
-import cn.sun.gaga.sdk.domain.model.Model;
 import cn.sun.gaga.sdk.domain.service.impl.OpenAiCodeReviewService;
 import cn.sun.gaga.sdk.infrastructure.git.GitCommand;
 import cn.sun.gaga.sdk.infrastructure.openai.IOpenAI;
 import cn.sun.gaga.sdk.infrastructure.openai.impl.ChatGLM;
 import cn.sun.gaga.sdk.infrastructure.weixin.WeiXin;
-import cn.sun.gaga.sdk.types.utils.BearerTokenUtils;
-import cn.sun.gaga.sdk.types.utils.WXAccessTokenUtils;
-import com.alibaba.fastjson2.JSON;
-import org.eclipse.jgit.api.Git;
-import org.eclipse.jgit.api.errors.GitAPIException;
-import org.eclipse.jgit.transport.UsernamePasswordCredentialsProvider;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import java.io.*;
-import java.net.HttpURLConnection;
-import java.net.URL;
-import java.nio.charset.StandardCharsets;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.Random;
-import java.util.Scanner;
 
 
 public class OpenAiCodeReview {
